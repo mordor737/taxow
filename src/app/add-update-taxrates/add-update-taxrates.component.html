@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="item-input">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Item</mat-label>
+        <input type="text" matInput [formControl]="itemFormControl" placeholder="Ex. Maggi">
+
+        <mat-error *ngIf="itemFormControl.hasError('required')">
+          Item is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      </div>
+
+      <div class="rate-input">
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Rate</mat-label>
+            <input type="text" matInput [formControl]="itemFormControl" placeholder="Ex. 2">
+
+            <mat-error *ngIf="itemFormControl.hasError('required')">
+              Rate is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          </div>
+          <div class="add-button">
+            <button mat-raised-button color="primary" >{{buttonType}}</button>
+          </div>
+</div>

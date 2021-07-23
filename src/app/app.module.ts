@@ -10,10 +10,16 @@ import { EnterRecordComponent } from './enter-record/enter-record.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { AddUpdateTaxratesComponent } from './add-update-taxrates/add-update-taxrates.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EnterRecordComponent
+    EnterRecordComponent,
+    AddUpdateTaxratesComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

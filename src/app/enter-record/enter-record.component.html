@@ -1,31 +1,41 @@
 <div class="container">
-    <form>
+  <form>
     <div class="item-selector">
-        <mat-form-field appearance="fill">
-            <mat-label>Items</mat-label>
-            <mat-select [formControl]="itemControl" >
-              <mat-option>-- None --</mat-option>
-              <mat-optgroup *ngFor="let group of itemGroups" [label]="group.name"
-                            [disabled]="group.disabled">
-                <mat-option *ngFor="let item of group.item" [value]="item.value">
-                  {{item.viewValue}}
-                </mat-option>
-              </mat-optgroup>
-            </mat-select>
-          </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Items</mat-label>
+        <mat-select [formControl]="itemControl">
+          <mat-option>-- None --</mat-option>
+          <mat-optgroup
+            *ngFor="let group of itemGroups"
+            [label]="group.name"
+            [disabled]="group.disabled"
+          >
+            <mat-option *ngFor="let item of group.item" [value]="item.value">
+              {{ item.viewValue }}
+            </mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </mat-form-field>
     </div>
 
     <div class="quantity-input">
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Quantity</mat-label>
-            <input type="number" matInput [formControl]="quantityFormControl" placeholder="Ex. 1">
-            
-            <mat-error *ngIf="quantityFormControl.hasError('required')">
-              Quantity is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Quantity</mat-label>
+        <input
+          type="number"
+          matInput
+          [formControl]="quantityFormControl"
+          placeholder="Ex. 1"
+        />
+
+        <mat-error *ngIf="quantityFormControl.hasError('required')">
+          Quantity is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
     </div>
 
-    <div class="add-button"><button mat-raised-button color="primary">Add</button></div>
-</form>
+    <div class="add-button">
+      <button mat-raised-button color="primary">Add</button>
+    </div>
+  </form>
 </div>

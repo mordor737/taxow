@@ -3,7 +3,7 @@
     <div class="item-selector">
       <mat-form-field appearance="fill">
         <mat-label>Items</mat-label>
-        <mat-select [formControl]="itemControl">
+        <mat-select [formControl]="item">
           <mat-option>-- None --</mat-option>
           <mat-optgroup
             *ngFor="let group of itemGroups"
@@ -24,18 +24,18 @@
         <input
           type="number"
           matInput
-          [formControl]="quantityFormControl"
+          [formControl]="quantity"
           placeholder="Ex. 1"
         />
 
-        <mat-error *ngIf="quantityFormControl.hasError('required')">
+        <mat-error *ngIf="quantity.hasError('required')">
           Quantity is <strong>required</strong>
         </mat-error>
       </mat-form-field>
     </div>
 
     <div class="add-button">
-      <button mat-raised-button color="primary">Add</button>
+      <button mat-raised-button color="primary" [disabled]="">Add</button>
     </div>
   </form>
 </div>
